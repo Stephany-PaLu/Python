@@ -19,10 +19,10 @@ mi_nombre
 mi_edad = "24"
 mi_edad
 
-
-
 # c. Crear una oración que indique su nombre y su edad utilizando las dos variables creadas en el paso anterior
 
+'mi nombre es', mi_nombre, 'y mi edad es', mi_edad
+print('mi nombre es', mi_nombre, 'y mi edad es', mi_edad)
 
 
 
