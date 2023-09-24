@@ -13,8 +13,17 @@ import matplotlib.pyplot as plt
 import pandas as pd
 
 # b. Dos variables, una que contenga su nombre y la otra su edad
+mi_nombre = "Stephany"
+mi_nombre
+
+mi_edad = "24"
+mi_edad
+
 
 
 # c. Crear una oración que indique su nombre y su edad utilizando las dos variables creadas en el paso anterior
+
+
+
 
 
