@@ -33,6 +33,16 @@ desviacion_ultimo_año = ultimo_año['escalera_vida'].std()
 desviacion_ultimo_año
 
 
+# Elegir dos países 
+Ecuador = "Ecuador"
+Ecuador
+Noruega = "Noruega"
+Noruega
+
+
+
+
+
 
 
 
