@@ -35,32 +35,36 @@ desviacion_ultimo_año
 
 
 # Elegir dos países 
-Ecuador = "Ecuador"
-Ecuador
-Noruega = "Noruega"
-Noruega
+Autralia
+Canadá
 
-primer_año.loc['Ecuador']
+primer_año.loc['Brasil']
 
 # Filtrar datos para los dos países en el primer año
 
-Ecuador_primer_año = datos_felicidad.loc['Ecuador']
-Ecuador_primer_año
+Australia_primer_año = primer_año.loc['Australia']
+Australia_primer_año
 
-Noruega_primer_año = datos_felicidad.loc['Noruega']
-Noruega_primer_año
+Canadá_primer_año = primer_año.loc['Canadá']
+Canadá_primer_año
 
 # Filtrar datos para los dos países en el último año
-datos_pais1_ultimo_anio = ultimo_anio[ultimo_anio['país'] == pais1]
-datos_pais2_ultimo_anio = ultimo_anio[ultimo_anio['país'] == pais2]
+Australia_ultimo_año = ultimo_año.loc['Australia']
+Australia_ultimo_año
+
+Canadá_ultimo_año = ultimo_año.loc['Canadá']
+Canadá_ultimo_año
 
 # Obtener los valores de felicidad para los dos países en el primer año
-felicidad_pais1_primer_anio = datos_pais1_primer_anio['felicidad'].values[0]
-felicidad_pais2_primer_anio = datos_pais2_primer_anio['felicidad'].values[0]
+felicidad_Australia_1año = Australia_primer_año.loc['escalera_vida']
+
+felicidad_Canada_1año = Canadá_primer_año.loc['escalera_vida']
 
 # Obtener los valores de felicidad para los dos países en el último año
-felicidad_pais1_ultimo_anio = datos_pais1_ultimo_anio['felicidad'].values[0]
-felicidad_pais2_ultimo_anio = datos_pais2_ultimo_anio['felicidad'].values[0]
+felicidad_Austra_ultimo_año = Australia_ultimo_año.loc['escalera_vida']
+
+felicidad_Canada_ultimo_año = Canadá_ultimo_año.loc['escalera_vida']
+
 
 # Imprimir los valores de felicidad para comparación
 print(f"Felicidad en {pais1} en el primer año: {felicidad_pais1_primer_anio}")
