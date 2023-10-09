@@ -11,6 +11,10 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+##  **Tarea de la semana 3**
+
+#  ***Niveles de Felicidad***
+
 Para empezar, importamos los paquetes con los que vamos a trabajar
 
 ```{python}
@@ -41,7 +45,7 @@ ultimo_año
 
 Una vez filtrados los datos, se calcula el promedio y desviación estándar para cada año.
 
-Primer año:
+##### ***Primer año:***
 
 ```{python}
 promedio_primer_año = primer_año['escalera_vida'].mean()
@@ -53,7 +57,7 @@ desviacion_primer_año = primer_año['escalera_vida'].std()
 desviacion_primer_año
 ```
 
-Último año:
+##### ***Último año:***
 
 ```{python}
 promedio_ultimo_año = ultimo_año['escalera_vida'].mean()
@@ -69,7 +73,7 @@ Una vez obtenido esos valores se hizo la selección de dos paises, para al final
 
 Primero hacemos la selección de paises filtrando con ayuda del método loc en pais, y lo hacemos para primer y ultimo año de cada pais.
 
-Países primer año:
+##### ***Países primer año:***
 
 ```{python}
 Australia_primer_año = primer_año.loc['Australia']
@@ -81,7 +85,7 @@ Canadá_primer_año = primer_año.loc['Canadá']
 Canadá_primer_año
 ```
 
-Países último año:
+##### ***Países último año:***
 
 ```{python}
 Australia_ultimo_año = ultimo_año.loc['Australia']
@@ -95,7 +99,7 @@ Canadá_ultimo_año
 
 Filtrados los datos, se puede obtener los valores de felicidad para ambos países en el primer y último año, para ello se vuelve a hacer uso del método loc para seleccionar el valor de escalera_vida (nombre que pertenece a felicidad en los datos)
 
-Primer año:
+##### ***Primer año:***
 
 ```{python}
 felicidad_Australia_1año = Australia_primer_año.loc['escalera_vida']
@@ -107,7 +111,7 @@ felicidad_Canada_1año = Canadá_primer_año.loc['escalera_vida']
 felicidad_Canada_1año
 ```
 
-Último año:
+##### ***Último año:***
 
 ```{python}
 felicidad_Austra_ultimo_año = Australia_ultimo_año.loc['escalera_vida']
@@ -119,28 +123,10 @@ felicidad_Canada_ultimo_año = Canadá_ultimo_año.loc['escalera_vida']
 felicidad_Canada_ultimo_año
 ```
 
+Volvemos a agregar los valores del promedio y desviación estándar de felicidad del primer y último año para realizar una comparación con los valores de felicidad de primer y último año de cada país.
 
+```{python}
+promedio_primer_año; desviacion_primer_año; promedio_ultimo_año; desviacion_ultimo_año; felicidad_Australia_1año; felicidad_Canada_1año;felicidad_Austra_ultimo_año;felicidad_Canada_ultimo_año
+```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Finalmente, se puede concluir que de acuerdo a los resultados obtenidos el promedio de felicidad de ambos paises en el primer año en comparación al promedio y desviación estándar a nivel mundial en el primer año es muy similar, dando una tendencia a que todos tienen el mismo nivel de felicidad o muy cercano, casi todos son igual de felices. Mientras que en el último año, se ve una diferencia en comparación a nivel mundial, pues el nivel de felicidad en ambos paises se mantiene, es decir, su reducción es minima casi no se nota, en cambio a nivel mundial ha reducido el promedio de felicidad y se ve un incremento en la desviación estándar indicando que el nivel de felicidad se está alejando del promedio, y existe una varianza en la felicidad notoria a traves del tiempo.

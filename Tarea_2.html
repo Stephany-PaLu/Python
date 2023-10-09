@@ -357,6 +357,11 @@ display: none;
 </div>
 
 
+<div id="tarea-de-la-semana-3" class="section level2">
+<h2><strong>Tarea de la semana 3</strong></h2>
+</div>
+<div id="niveles-de-felicidad" class="section level1">
+<h1><strong><em>Niveles de Felicidad</em></strong></h1>
 <p>Para empezar, importamos los paquetes con los que vamos a
 trabajar</p>
 <pre class="python"><code>import pandas as pd
@@ -440,14 +445,17 @@ ultimo_año</code></pre>
 ## [136 rows x 16 columns]</code></pre>
 <p>Una vez filtrados los datos, se calcula el promedio y desviación
 estándar para cada año.</p>
-<p>Primer año:</p>
+<div id="primer-año" class="section level5">
+<h5><strong><em>Primer año:</em></strong></h5>
 <pre class="python"><code>promedio_primer_año = primer_año[&#39;escalera_vida&#39;].mean()
 promedio_primer_año</code></pre>
 <pre><code>## 6.446164272449635</code></pre>
 <pre class="python"><code>desviacion_primer_año = primer_año[&#39;escalera_vida&#39;].std()
 desviacion_primer_año</code></pre>
 <pre><code>## 0.9191426322726484</code></pre>
-<p>Último año:</p>
+</div>
+<div id="último-año" class="section level5">
+<h5><strong><em>Último año:</em></strong></h5>
 <pre class="python"><code>promedio_ultimo_año = ultimo_año[&#39;escalera_vida&#39;].mean()
 promedio_ultimo_año</code></pre>
 <pre><code>## 5.502134340650895</code></pre>
@@ -460,7 +468,9 @@ paises escogidos, en el primer año reportado y el último año
 reportado.</p>
 <p>Primero hacemos la selección de paises filtrando con ayuda del método
 loc en pais, y lo hacemos para primer y ultimo año de cada pais.</p>
-<p>Países primer año:</p>
+</div>
+<div id="países-primer-año" class="section level5">
+<h5><strong><em>Países primer año:</em></strong></h5>
 <pre class="python"><code>Australia_primer_año = primer_año.loc[&#39;Australia&#39;]
 Australia_primer_año</code></pre>
 <pre><code>## anio                           2005.000000
@@ -499,7 +509,9 @@ Canadá_primer_año</code></pre>
 ## gini_banco_mundial                     NaN
 ## gini_banco_mundial_promedio       0.336800
 ## Name: Canadá, dtype: float64</code></pre>
-<p>Países último año:</p>
+</div>
+<div id="países-último-año" class="section level5">
+<h5><strong><em>Países último año:</em></strong></h5>
 <pre class="python"><code>Australia_ultimo_año = ultimo_año.loc[&#39;Australia&#39;]
 Australia_ultimo_año</code></pre>
 <pre><code>## anio                           2018.000000
@@ -542,20 +554,50 @@ Canadá_ultimo_año</code></pre>
 ambos países en el primer y último año, para ello se vuelve a hacer uso
 del método loc para seleccionar el valor de escalera_vida (nombre que
 pertenece a felicidad en los datos)</p>
-<p>Primer año:</p>
+</div>
+<div id="primer-año-1" class="section level5">
+<h5><strong><em>Primer año:</em></strong></h5>
 <pre class="python"><code>felicidad_Australia_1año = Australia_primer_año.loc[&#39;escalera_vida&#39;]
 felicidad_Australia_1año</code></pre>
 <pre><code>## 7.340688228607178</code></pre>
 <pre class="python"><code>felicidad_Canada_1año = Canadá_primer_año.loc[&#39;escalera_vida&#39;]
 felicidad_Canada_1año</code></pre>
 <pre><code>## 7.41804838180542</code></pre>
-<p>Último año:</p>
+</div>
+<div id="último-año-1" class="section level5">
+<h5><strong><em>Último año:</em></strong></h5>
 <pre class="python"><code>felicidad_Austra_ultimo_año = Australia_ultimo_año.loc[&#39;escalera_vida&#39;]
 felicidad_Austra_ultimo_año</code></pre>
 <pre><code>## 7.176993370056152</code></pre>
 <pre class="python"><code>felicidad_Canada_ultimo_año = Canadá_ultimo_año.loc[&#39;escalera_vida&#39;]
 felicidad_Canada_ultimo_año</code></pre>
 <pre><code>## 7.175496578216553</code></pre>
+<p>Volvemos a agregar los valores del promedio y desviación estándar de
+felicidad del primer y último año para realizar una comparación con los
+valores de felicidad de primer y último año de cada país.</p>
+<pre class="python"><code>promedio_primer_año; desviacion_primer_año; promedio_ultimo_año; desviacion_ultimo_año; felicidad_Australia_1año; felicidad_Canada_1año;felicidad_Austra_ultimo_año;felicidad_Canada_ultimo_año</code></pre>
+<pre><code>## 6.446164272449635
+## 0.9191426322726484
+## 5.502134340650895
+## 1.1034612436939357
+## 7.340688228607178
+## 7.41804838180542
+## 7.176993370056152
+## 7.175496578216553</code></pre>
+<p>Finalmente, se puede concluir que de acuerdo a los resultados
+obtenidos el promedio de felicidad de ambos paises en el primer año en
+comparación al promedio y desviación estándar a nivel mundial en el
+primer año es muy similar, dando una tendencia a que todos tienen el
+mismo nivel de felicidad o muy cercano, casi todos son igual de felices.
+Mientras que en el último año, se ve una diferencia en comparación a
+nivel mundial, pues el nivel de felicidad en ambos paises se mantiene,
+es decir, su reducción es minima casi no se nota, en cambio a nivel
+mundial ha reducido el promedio de felicidad y se ve un incremento en la
+desviación estándar indicando que el nivel de felicidad se está alejando
+del promedio, y existe una varianza en la felicidad notoria a traves del
+tiempo.</p>
+</div>
+</div>
 
 
 
