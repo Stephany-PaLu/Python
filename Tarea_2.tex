@@ -1,0 +1,229 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Tarea\_2},
+  pdfauthor={Stephany Pachay},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Tarea\_2}
+\author{Stephany Pachay}
+\date{2023-10-08}
+
+\begin{document}
+\maketitle
+
+Para empezar, importamos los paquetes con los que vamos a trabajar
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\ImportTok{import}\NormalTok{ pandas }\ImportTok{as}\NormalTok{ pd}
+\ImportTok{import}\NormalTok{ numpy }\ImportTok{as}\NormalTok{ np}
+\end{Highlighting}
+\end{Shaded}
+
+A continuación, vamos a usar los datos de felicidad en el link otorgado,
+copiamos en Raw y ese enlace lo usaremos junto con la funcion de pandas,
+read\_csv para así poder leer el archivo, tambien agregamos la función
+index\_col para país.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{datos\_felicidad }\OperatorTok{=}\NormalTok{ pd.read\_csv(}\StringTok{\textquotesingle{}https://raw.githubusercontent.com/cienciadedatos/datos{-}de{-}miercoles/master/datos/2019/2019{-}08{-}07/felicidad.csv\textquotesingle{}}\NormalTok{, index\_col}\OperatorTok{=}\StringTok{"pais"}\NormalTok{)}
+\NormalTok{datos\_felicidad}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##              anio  ...  gini_banco_mundial_promedio
+## pais               ...                             
+## Afghanistán  2008  ...                          NaN
+## Afghanistán  2009  ...                          NaN
+## Afghanistán  2010  ...                          NaN
+## Afghanistán  2011  ...                          NaN
+## Afghanistán  2012  ...                          NaN
+## ...           ...  ...                          ...
+## Zimbabue     2014  ...                        0.432
+## Zimbabue     2015  ...                        0.432
+## Zimbabue     2016  ...                        0.432
+## Zimbabue     2017  ...                        0.432
+## Zimbabue     2018  ...                        0.432
+## 
+## [1704 rows x 16 columns]
+\end{verbatim}
+
+Una vez cargada la base de datos, se calculan las medidas de tendencia
+central y dispersión a nivel global para el primer y último año incluido
+en el set de datos, y para ello se escogió hacerlo mediante el promedio
+y desviación estándar.
+
+Primero, vamos a realizar un filtro con la base de datos, para poder
+separar los datos dle primer año y del ultimo año.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{primer\_año }\OperatorTok{=}\NormalTok{ datos\_felicidad[datos\_felicidad[}\StringTok{\textquotesingle{}anio\textquotesingle{}}\NormalTok{] }\OperatorTok{==}\NormalTok{ datos\_felicidad[}\StringTok{\textquotesingle{}anio\textquotesingle{}}\NormalTok{].}\BuiltInTok{min}\NormalTok{()]}
+\NormalTok{primer\_año}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                  anio  ...  gini_banco_mundial_promedio
+## pais                   ...                             
+## Australia        2005  ...                     0.342750
+## Bélgica          2005  ...                     0.284308
+## Brasil           2005  ...                     0.547286
+## Canadá           2005  ...                     0.336800
+## República Checa  2005  ...                     0.264167
+## Dinamarca        2005  ...                     0.267000
+## Egipto           2005  ...                     0.312000
+## Francia          2005  ...                     0.320923
+## Alemania         2005  ...                     0.306222
+## Greece           2005  ...                     0.346385
+## Hungría          2005  ...                     0.297917
+## Iran             2005  ...                     0.413400
+## Italia           2005  ...                     0.344000
+## Japón            2005  ...                     0.321000
+## Jordania         2005  ...                     0.343000
+## Líbano           2005  ...                     0.318000
+## México           2005  ...                     0.469800
+## Países Bajos     2005  ...                     0.286333
+## Pakistan         2005  ...                     0.315125
+## Polonia          2005  ...                          NaN
+## Rumania          2005  ...                     0.365800
+## Arabia Saudita   2005  ...                          NaN
+## España           2005  ...                     0.345385
+## Suecia           2005  ...                     0.274154
+## Turquía          2005  ...                     0.405800
+## Reino Unido      2005  ...                     0.341083
+## Venezuela        2005  ...                     0.497167
+## 
+## [27 rows x 16 columns]
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ultimo\_año }\OperatorTok{=}\NormalTok{ datos\_felicidad[datos\_felicidad[}\StringTok{\textquotesingle{}anio\textquotesingle{}}\NormalTok{] }\OperatorTok{==}\NormalTok{ datos\_felicidad[}\StringTok{\textquotesingle{}anio\textquotesingle{}}\NormalTok{].}\BuiltInTok{max}\NormalTok{()]}
+\NormalTok{ultimo\_año}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##              anio  ...  gini_banco_mundial_promedio
+## pais               ...                             
+## Afghanistán  2018  ...                          NaN
+## Albania      2018  ...                     0.303250
+## Algeria      2018  ...                     0.276000
+## Argentina    2018  ...                     0.460938
+## Armenia      2018  ...                     0.319250
+## ...           ...  ...                          ...
+## Venezuela    2018  ...                     0.497167
+## Vietnam      2018  ...                     0.362750
+## Yemen        2018  ...                     0.357000
+## Zambia       2018  ...                     0.527400
+## Zimbabue     2018  ...                     0.432000
+## 
+## [136 rows x 16 columns]
+\end{verbatim}
+
+\end{document}

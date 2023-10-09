@@ -2,111 +2,145 @@
 title: "Tarea_2"
 author: "Stephany Pachay"
 date: "2023-10-08"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+Para empezar, importamos los paquetes con los que vamos a trabajar
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{python}
+import pandas as pd
+import numpy as np
 ```
 
-## Including Plots
+A continuación, vamos a usar los datos de felicidad en el link otorgado, copiamos en Raw y ese enlace lo usaremos junto con la funcion de pandas, read_csv para así poder leer el archivo, tambien agregamos la función index_col para país.
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
-datos_felicidad = pd.read_csv('[https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-07/felicidad.csv',](https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-07/felicidad.csv',) index_col="pais")
-
+```{python}
+datos_felicidad = pd.read_csv('https://raw.githubusercontent.com/cienciadedatos/datos-de-miercoles/master/datos/2019/2019-08-07/felicidad.csv', index_col="pais")
 datos_felicidad
+```
 
-\# Medida de tendencia central y dispersión de la felicidad a nivel mundial para el primer y último año
+Una vez cargada la base de datos, se calculan las medidas de tendencia central y dispersión a nivel global para el primer y último año incluido en el set de datos, y para ello se escogió hacerlo mediante el promedio y desviación estándar.
 
-\# incluido en el set de datos. Pueden escoger cualquier medida, por ejemplo, promedio y desviación estándar.
+Primero, vamos a realizar un filtro con la base de datos, para poder separar los datos dle primer año y del ultimo año.
 
-\# Filtrar datos para el primer año
-
+```{python}
 primer_año = datos_felicidad[datos_felicidad['anio'] == datos_felicidad['anio'].min()]
-
 primer_año
+```
 
-\# Filtrar datos para el último año
-
+```{python}
 ultimo_año = datos_felicidad[datos_felicidad['anio'] == datos_felicidad['anio'].max()]
-
 ultimo_año
+```
 
-\# Calcular promedio y desviación estándar para el primer año
+Una vez filtrados los datos, se calcula el promedio y desviación estándar para cada año.
 
+Primer año:
+
+```{python}
 promedio_primer_año = primer_año['escalera_vida'].mean()
-
 promedio_primer_año
+```
 
-prueba_pro = pd.DataFrame(promedio_primer_año)
-
+```{python}
 desviacion_primer_año = primer_año['escalera_vida'].std()
-
 desviacion_primer_año
+```
 
-\# Calcular promedio y desviación estándar para el último año
+Último año:
 
+```{python}
 promedio_ultimo_año = ultimo_año['escalera_vida'].mean()
-
 promedio_ultimo_año
+```
 
+```{python}
 desviacion_ultimo_año = ultimo_año['escalera_vida'].std()
-
 desviacion_ultimo_año
+```
 
-\# Elegir dos países
+Una vez obtenido esos valores se hizo la selección de dos paises, para al final hacer una comparación de valores a nivel mundial con los paises escogidos, en el primer año reportado y el último año reportado.
 
-Autralia
+Primero hacemos la selección de paises filtrando con ayuda del método loc en pais, y lo hacemos para primer y ultimo año de cada pais.
 
-Canadá
+Países primer año:
 
-primer_año.loc['Brasil']
-
-\# Filtrar datos para los dos países en el primer año
-
+```{python}
 Australia_primer_año = primer_año.loc['Australia']
-
 Australia_primer_año
+```
 
+```{python}
 Canadá_primer_año = primer_año.loc['Canadá']
-
 Canadá_primer_año
+```
 
-\# Filtrar datos para los dos países en el último año
+Países último año:
 
+```{python}
 Australia_ultimo_año = ultimo_año.loc['Australia']
-
 Australia_ultimo_año
+```
 
+```{python}
 Canadá_ultimo_año = ultimo_año.loc['Canadá']
-
 Canadá_ultimo_año
+```
 
-\# Obtener los valores de felicidad para los dos países en el primer año
+Filtrados los datos, se puede obtener los valores de felicidad para ambos países en el primer y último año, para ello se vuelve a hacer uso del método loc para seleccionar el valor de escalera_vida (nombre que pertenece a felicidad en los datos)
 
+Primer año:
+
+```{python}
 felicidad_Australia_1año = Australia_primer_año.loc['escalera_vida']
+felicidad_Australia_1año
+```
 
+```{python}
 felicidad_Canada_1año = Canadá_primer_año.loc['escalera_vida']
+felicidad_Canada_1año
+```
 
-\# Obtener los valores de felicidad para los dos países en el último año
+Último año:
 
+```{python}
 felicidad_Austra_ultimo_año = Australia_ultimo_año.loc['escalera_vida']
+felicidad_Austra_ultimo_año
+```
 
+```{python}
 felicidad_Canada_ultimo_año = Canadá_ultimo_año.loc['escalera_vida']
+felicidad_Canada_ultimo_año
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
