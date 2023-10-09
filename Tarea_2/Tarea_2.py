@@ -28,11 +28,10 @@ desviacion_primer_año
 promedio_ultimo_año = ultimo_año['escalera_vida'].mean()
 promedio_ultimo_año
 
-
 desviacion_ultimo_año = ultimo_año['escalera_vida'].std()
 desviacion_ultimo_año
 
-# Elegir dos países 
+# seleccionar dos países 
 Autralia
 Canadá
 
