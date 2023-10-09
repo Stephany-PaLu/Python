@@ -66,6 +66,13 @@ felicidad_Austra_ultimo_año
 felicidad_Canada_ultimo_año = Canadá_ultimo_año.loc['escalera_vida']
 felicidad_Canada_ultimo_año
 
+# Para realizar la comparacion se imprimen nuevamente los resultados 
 
-
-
+promedio_primer_año
+desviacion_primer_año
+promedio_ultimo_año
+desviacion_ultimo_año
+felicidad_Australia_1año
+felicidad_Canada_1año
+felicidad_Austra_ultimo_año
+felicidad_Canada_ultimo_año
