@@ -10,11 +10,11 @@ datos_felicidad
 # Medida de tendencia central y dispersión de la felicidad a nivel mundial para el primer y último año 
 # incluido en el set de datos. Pueden escoger cualquier medida, por ejemplo, promedio y desviación estándar.
 
-# Filtrar datos para el primer año
+# Filtrar para el primer año
 primer_año = datos_felicidad[datos_felicidad['anio'] == datos_felicidad['anio'].min()]
 primer_año
 
-# Filtrar datos para el último año
+# Filtrarpara el último año
 ultimo_año = datos_felicidad[datos_felicidad['anio'] == datos_felicidad['anio'].max()]
 ultimo_año
 
@@ -33,14 +33,11 @@ promedio_ultimo_año
 desviacion_ultimo_año = ultimo_año['escalera_vida'].std()
 desviacion_ultimo_año
 
-
 # Elegir dos países 
 Autralia
 Canadá
 
-primer_año.loc['Brasil']
-
-# Filtrar datos para los dos países en el primer año
+# Datos para los dos países en el primer año
 
 Australia_primer_año = primer_año.loc['Australia']
 Australia_primer_año
@@ -48,7 +45,7 @@ Australia_primer_año
 Canadá_primer_año = primer_año.loc['Canadá']
 Canadá_primer_año
 
-# Filtrar datos para los dos países en el último año
+# Datos para los dos países en el último año
 Australia_ultimo_año = ultimo_año.loc['Australia']
 Australia_ultimo_año
 
@@ -57,47 +54,17 @@ Canadá_ultimo_año
 
 # Obtener los valores de felicidad para los dos países en el primer año
 felicidad_Australia_1año = Australia_primer_año.loc['escalera_vida']
+felicidad_Australia_1año
 
 felicidad_Canada_1año = Canadá_primer_año.loc['escalera_vida']
+felicidad_Canada_1año
 
 # Obtener los valores de felicidad para los dos países en el último año
 felicidad_Austra_ultimo_año = Australia_ultimo_año.loc['escalera_vida']
+felicidad_Austra_ultimo_año
 
 felicidad_Canada_ultimo_año = Canadá_ultimo_año.loc['escalera_vida']
-
-
-# Imprimir los valores de felicidad para comparación
-print(f"Felicidad en {pais1} en el primer año: {felicidad_pais1_primer_anio}")
-print(f"Felicidad en {pais2} en el primer año: {felicidad_pais2_primer_anio}")
-print(f"Felicidad en {pais1} en el último año: {felicidad_pais1_ultimo_anio}")
-print(f"Felicidad en {pais2} en el último año: {felicidad_pais2_ultimo_anio}")
-Este código te permitirá comparar los valores de felicidad de dos países específicos con los valores a nivel mundial en el primer y último año reportado en tus datos. Asegúrate de reemplazar "País1" y "País2" con los nombres reales de los países que deseas analizar.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+felicidad_Canada_ultimo_año
 
 
 
